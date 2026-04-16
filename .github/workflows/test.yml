@@ -24,6 +24,11 @@ jobs:
         run: |
           pip install pytest pytest-html
 
+      - name: Install Playwright Browsers
+        run: |
+          pip install playwright
+          playwright install --with-deps
+
       - name: Run tests
         run: |
           pytest --html=report.html --self-contained-html
